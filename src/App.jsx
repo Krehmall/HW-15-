@@ -7,7 +7,7 @@ const App = () => {
   return (
     <main>
       <Header />
-      <Dashboard />
+      <Dashboard students={students} />
       <Footer />
     </main>
   );

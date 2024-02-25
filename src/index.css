@@ -6,3 +6,34 @@ body {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+h1,
+h5,
+h6 {
+  margin: 0;
+  padding: 4px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid #c4c2c2;
+  text-align: left;
+  padding: 10px;
+}
+th {
+  background-color: #50b94a;
+  border: 1px solid #c4c2c2;
+  text-align: left;
+  padding: 10px;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
