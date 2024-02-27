@@ -37,3 +37,11 @@ th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+form {
+  display: flex;
+  justify-content: center;
+}
+input,
+button {
+  width: 16.6%;
+}
