@@ -1,20 +1,14 @@
 table {
+  /* table-layout: fixed; */
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
 td {
-  border: 1px solid #c4c2c2;
+  border: 1px solid var(--borders);
   text-align: left;
   padding: 10px;
-}
-th {
-  background-color: #50b94a;
-  border: 1px solid #c4c2c2;
-  text-align: left;
-  padding: 10px;
-  color: white;
 }
 
 tr:nth-child(even) {
@@ -24,15 +18,5 @@ tr:nth-child(even) {
 .action {
   margin: 0;
   text-align: right;
-}
-.remove-button {
-  font-weight: bold;
-  border-radius: 4px;
-  background-color: #ce501a;
-  border: 1px solid #c4c2c2;
-  color: white;
-  border: none;
-  cursor: pointer;
-  height: 55px;
-  width: 200px;
+  width: 325px;
 }

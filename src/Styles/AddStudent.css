@@ -7,22 +7,3 @@ form {
 form > div {
   width: 16.6%;
 }
-label {
-  display: block;
-  text-align: center;
-}
-input {
-  height: 35px;
-  width: 100%;
-}
-button {
-  font-weight: bold;
-  border-radius: 4px;
-  background-color: #50b94a;
-  border: 1px solid #c4c2c2;
-  color: white;
-  border: none;
-  cursor: pointer;
-  min-width: 200px;
-  height: 55px;
-}

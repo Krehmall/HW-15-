@@ -1,5 +1,8 @@
 @import "./Global.css";
 @import "./Header.css";
 @import "./Footer.css";
+@import "./TableHeader.css";
+@import "./Button.css";
+@import "./Input.css";
 @import "./AddStudent.css";
 @import "./Dashboard.css";

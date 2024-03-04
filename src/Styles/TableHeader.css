@@ -1,0 +1,7 @@
+th {
+  background-color: var(--app-green);
+  border: 1px solid var(--borders);
+  text-align: left;
+  padding: 10px;
+  color: white;
+}

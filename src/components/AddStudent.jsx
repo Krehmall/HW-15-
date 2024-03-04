@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-// import App from "./../App";
+import Button from "./Button";
+import Input from "./Input";
 
 let studentTemplate = {
   name: "",
@@ -28,27 +29,14 @@ const AddStudent = ({ addStudent }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input onChange={handleChange} value={newStudent.name} id="name"></input>
-        </div>
-        <div>
-          <label htmlFor="age">Age</label>
-          <input onChange={handleChange} value={newStudent.age} id="age"></input>
-        </div>
-        <div>
-          <label htmlFor="major">Major</label>
-          <input onChange={handleChange} value={newStudent.major} id="major"></input>
-        </div>
-        <div>
-          <label htmlFor="university">University</label>
-          <input onChange={handleChange} value={newStudent.university} id="university"></input>
-        </div>
-        <div>
-          <label htmlFor="averageGrade">Average Grade</label>
-          <input onChange={handleChange} value={newStudent.averageGrade} id="averageGrade"></input>
-        </div>
-        <button type="submit">Add new student</button>
+        <Input onChange={handleChange} id="name" value={newStudent.name} label="Name" />
+        <Input onChange={handleChange} id="age" value={newStudent.age} label="Age" />
+        <Input onChange={handleChange} id="major" value={newStudent.major} label="Major" />
+        <Input onChange={handleChange} id="university" value={newStudent.university} label="University" />
+        <Input onChange={handleChange} id="averageGrade" value={newStudent.averageGrade} label="Average Grade" />
+        <Button type="submit" className="add-button">
+          Add new student
+        </Button>
       </form>
     </>
   );

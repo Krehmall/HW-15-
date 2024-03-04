@@ -1,3 +1,11 @@
+:root {
+  --color-background: rgb(193, 196, 169);
+  --app-green: #50b94a;
+  --app-red: #ce501a;
+  --borders: #c4c2c2;
+  --app-yellow: #e5c826;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,5 +13,5 @@
 body {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: rgb(193, 196, 169);
+  background-color: var(--color-background);
 }
