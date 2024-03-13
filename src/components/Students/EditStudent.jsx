@@ -1,5 +1,5 @@
-import Input from "./Input";
-import Button from "./Button";
+import Input from "../Input";
+import Button from "../Button";
 
 const EditStudent = ({ studentData, editStudentSubmit, handleChange }) => {
   return (

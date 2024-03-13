@@ -1,4 +1,4 @@
-const TableHeader = () => {
+const TableHeaderStudents = () => {
   return (
     <>
       <thead>
@@ -14,4 +14,4 @@ const TableHeader = () => {
     </>
   );
 };
-export default TableHeader;
+export default TableHeaderStudents;

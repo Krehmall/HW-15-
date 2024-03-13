@@ -4,6 +4,10 @@
   --app-red: #ce501a;
   --borders: #c4c2c2;
   --app-yellow: #e5c826;
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  --color-dark2: #0000004d;
+  --color-light: #f7d7e0;
+  --eror-col: rgba(221, 37, 37, 0.8);
 }
 
 * {
@@ -14,4 +18,8 @@ body {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: var(--color-background);
+}
+img {
+  width: 70px;
+  height: 70px;
 }

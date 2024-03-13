@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../Button";
 
 const StudentRender = ({ studentData, editStudent, removeStudent }) => {
   return (

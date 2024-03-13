@@ -25,3 +25,7 @@ button {
   background-color: var(--app-green);
   min-width: 300px;
 }
+.logout-btn {
+  background-color: var(--app-red);
+  margin-right: 55px;
+}

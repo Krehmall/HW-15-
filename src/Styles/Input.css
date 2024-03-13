@@ -6,3 +6,6 @@ input {
   height: 35px;
   width: 100%;
 }
+.input-element {
+  width: 100%;
+}

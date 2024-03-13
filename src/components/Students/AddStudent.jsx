@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Button from "./Button";
-import Input from "./Input";
+import Button from "../Button";
+import Input from "../Input";
 
 let studentTemplate = {
   name: "",
@@ -28,7 +28,7 @@ const AddStudent = ({ addStudent }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="add-student-form" onSubmit={handleSubmit}>
         <Input onChange={handleChange} id="name" value={newStudent.name} label="Name" />
         <Input onChange={handleChange} id="age" value={newStudent.age} label="Age" />
         <Input onChange={handleChange} id="major" value={newStudent.major} label="Major" />

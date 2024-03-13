@@ -1,9 +1,6 @@
-form {
+.add-student-form {
   display: flex;
   justify-content: space-between;
   margin: 10px 10px;
   gap: 10px;
-}
-form > div {
-  width: 16.6%;
 }
