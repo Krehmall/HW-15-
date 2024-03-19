@@ -1,29 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "../Button";
 import Input from "../Input";
+import { UsersContext } from "../../providers/UsersProvider";
 
-let userTemplate = {
-  avatar: "",
-  email: "",
-  username: "",
-  password: "",
-};
-
-const AddUser = ({ addUser }) => {
-  const [newUser, setNewUser] = useState(userTemplate);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { avatar, email, username, password } = newUser;
-    if (!avatar || !email || !username || !password) return;
-    addUser(email, username, password);
-  };
-
-  const handleChange = (e) => {
-    const id = e.target.id;
-    const value = e.target.value;
-    setNewUser({ ...newUser, [id]: value });
-  };
+const AddUser = () => {
+  const { handleChange, handleSubmit, newUser } = useContext(UsersContext);
 
   return (
     <>

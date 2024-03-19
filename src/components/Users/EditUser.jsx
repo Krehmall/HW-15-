@@ -1,7 +1,10 @@
 import Input from "../Input";
 import Button from "../Button";
+import { useContext } from "react";
+import { OneUserContext } from "../../providers/OneUserProvider";
 
-const EditUser = ({ userData, editUserSubmit, handleChange }) => {
+const EditUser = () => {
+  const { userData, editUserSubmit, handleChange } = useContext(OneUserContext);
   return (
     <tr>
       <td>

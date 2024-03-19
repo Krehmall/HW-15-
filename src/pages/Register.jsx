@@ -1,21 +1,10 @@
-import React, { useRef } from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
-const Register = ({ setShowRegister, handleAuth }) => {
-  const userNameRef = useRef(null);
-  const passwordRef = useRef(null);
-  const emailRef = useRef(null);
-
-  const handleRegister = (e) => {
-    e.preventDefault();
-
-    const username = userNameRef.current.value;
-    const password = passwordRef.current.value;
-    const email = emailRef.current.value;
-
-    if (!username.trim() || !password.trim() || !email.trim()) return;
-
-    handleAuth(username, password, true, email);
-  };
+const Register = () => {
+  const navigate = useNavigate();
+  const { handleRegister, usernameRef, passwordRef, emailRef } = useContext(AuthContext);
 
   return (
     <section className="register-container">
@@ -29,7 +18,7 @@ const Register = ({ setShowRegister, handleAuth }) => {
 
         <div className="input-wrapper">
           <label htmlFor="username">Username: </label>
-          <input type="text" id="username" ref={userNameRef} />
+          <input type="text" id="username" ref={usernameRef} />
         </div>
 
         <div className="input-wrapper">
@@ -42,7 +31,7 @@ const Register = ({ setShowRegister, handleAuth }) => {
       <div className="auth-switch">
         <p>
           Already have an account?{"  "}{" "}
-          <button className="button-text" onClick={() => setShowRegister(false)}>
+          <button className="button-text" onClick={() => navigate("/login")}>
             Sign in
           </button>
         </p>

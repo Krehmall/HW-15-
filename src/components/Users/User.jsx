@@ -1,33 +1,15 @@
-import { useState } from "react";
+import { useContext } from "react";
 import EditUser from "./EditUser";
 import UserRender from "./UserRender";
-import { userService } from "../../services/userService";
+import { OneUserContext } from "../../providers/OneUserProvider";
 
-const User = ({ user, removeUser }) => {
-  const [userData, setUserData] = useState(user);
-  const [editMode, setEditMode] = useState(0);
-  const editUser = () => {
-    setEditMode(1);
-  };
-
-  const editUserSubmit = () => {
-    const { id, username, password, email, avatar } = userData;
-    if (!username || !password || !email) return;
-    const updatedUser = userService.updateUser(id, username, password, email, avatar);
-    setUserData(updatedUser);
-    setEditMode(0);
-  };
-
-  const handleChange = (e) => {
-    const id = e.target.id;
-    const value = e.target.value;
-    setUserData({ ...userData, [id]: value });
-  };
+const User = () => {
+  const { editMode } = useContext(OneUserContext);
 
   if (editMode === 0) {
-    return <UserRender userData={userData} editUser={editUser} removeUser={removeUser} />;
+    return <UserRender />;
   } else {
-    return <EditUser userData={userData} editUserSubmit={editUserSubmit} handleChange={handleChange} />;
+    return <EditUser />;
   }
 };
 

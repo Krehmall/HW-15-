@@ -1,31 +1,12 @@
 import Student from "./Student";
-import studentsList from "../../data/students";
-import { useState } from "react";
+import { useContext } from "react";
 import AddStudent from "./AddStudent";
-import Admin from "../Users/Admin";
 import TableHeaderStudents from "./TableHeaderStudents";
-import { utilService } from "../../services/utilService";
+import { StudentsContext } from "../../providers/StudentsProvider";
+import { OneStudentProvider } from "../../providers/OneStudentProvider";
 
 const Dashboard = () => {
-  const [students, setStudents] = useState(studentsList);
-
-  const addStudent = (name, age, major, university, averageGrade) => {
-    const newStudent = {
-      id: utilService.generateId(),
-      name,
-      age,
-      major,
-      university,
-      averageGrade,
-    };
-
-    setStudents((stud) => [...stud, newStudent]);
-  };
-
-  const removeStudent = (studentId) => {
-    const updatedStudents = students.filter((stud) => stud.id !== studentId);
-    setStudents(updatedStudents);
-  };
+  const { students } = useContext(StudentsContext);
 
   return (
     <>
@@ -33,11 +14,13 @@ const Dashboard = () => {
         <TableHeaderStudents />
         <tbody>
           {students.map((student) => (
-            <Student student={student} removeStudent={removeStudent} key={student.id} />
+            <OneStudentProvider student={student} key={student.id}>
+              <Student />
+            </OneStudentProvider>
           ))}
         </tbody>
       </table>
-      <AddStudent addStudent={addStudent} />
+      <AddStudent />
     </>
   );
 };

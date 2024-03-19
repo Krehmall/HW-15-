@@ -2,13 +2,16 @@ import { storageService } from "./storageService";
 import { utilService } from "./utilService";
 import axios from "axios";
 
-function createUser(username, email, password) {
+function createUser(username, email, password, avatar) {
+  console.log(username);
+  console.log(avatar);
+
   const newUser = {
     id: utilService.generateId(),
     username,
     password,
     email,
-    avatar: `https://robohash.org/${username}.png`,
+    avatar: avatar === "" ? `https://robohash.org/${username}.png` : avatar,
     isAdmin: username === "admin" ? true : false,
     createdAt: new Date(),
   };

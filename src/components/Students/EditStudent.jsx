@@ -1,23 +1,27 @@
 import Input from "../Input";
 import Button from "../Button";
+import { useContext } from "react";
+import { OneStudentContext } from "../../providers/OneStudentProvider";
 
-const EditStudent = ({ studentData, editStudentSubmit, handleChange }) => {
+const EditStudent = () => {
+  const { handleChangeEditStudent, editStudentSubmit, studentData } = useContext(OneStudentContext);
+
   return (
     <tr>
       <td>
-        <Input onChange={handleChange} value={studentData.name} id="name" label="Name" />
+        <Input onChange={handleChangeEditStudent} value={studentData.name} id="name" label="Name" />
       </td>
       <td>
-        <Input onChange={handleChange} value={studentData.age} id="age" label="Age" />
+        <Input onChange={handleChangeEditStudent} value={studentData.age} id="age" label="Age" />
       </td>
       <td>
-        <Input onChange={handleChange} value={studentData.major} id="major" label="Major" />
+        <Input onChange={handleChangeEditStudent} value={studentData.major} id="major" label="Major" />
       </td>
       <td>
-        <Input onChange={handleChange} value={studentData.university} id="university" label="University" />
+        <Input onChange={handleChangeEditStudent} value={studentData.university} id="university" label="University" />
       </td>
       <td>
-        <Input onChange={handleChange} value={studentData.averageGrade} id="averageGrade" label="Average Grade" />
+        <Input onChange={handleChangeEditStudent} value={studentData.averageGrade} id="averageGrade" label="Average Grade" />
       </td>
       <td className="action">
         <Button onClick={() => editStudentSubmit()} className="editsubmit-button">

@@ -1,6 +1,11 @@
 import Button from "../Button";
+import { useContext } from "react";
+import { StudentsContext } from "../../providers/StudentsProvider";
+import { OneStudentContext } from "../../providers/OneStudentProvider";
 
-const StudentRender = ({ studentData, editStudent, removeStudent }) => {
+const StudentRender = () => {
+  const { removeStudent } = useContext(StudentsContext);
+  const { editStudent, studentData } = useContext(OneStudentContext);
   return (
     <tr>
       <td>{studentData.name}</td>

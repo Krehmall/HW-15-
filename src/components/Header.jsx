@@ -1,4 +1,9 @@
-const Header = ({ loggedInUser, handleLogout }) => {
+import { AuthContext } from "../providers/AuthProvider";
+import { useContext } from "react";
+import React from "react";
+
+const Header = () => {
+  const { loggedInUser, handleLogout } = useContext(AuthContext);
   return (
     <header>
       <h1 className="header-logo">Students</h1>
