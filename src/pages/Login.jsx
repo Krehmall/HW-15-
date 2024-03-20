@@ -1,10 +1,20 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { handleSubmit, showCredentsEror, usernameRef, passwordRef } = useContext(AuthContext);
+  const usernameRef = useRef(null);
+  const passwordRef = useRef(null);
+  const { handleAuth, showCredentsEror } = useContext(AuthContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const username = usernameRef.current.value;
+    const password = passwordRef.current.value;
+
+    handleAuth(username, password);
+  };
 
   return (
     <section className="login-container">

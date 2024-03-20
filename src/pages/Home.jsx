@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import { StudentsProvider } from "../providers/StudentsProvider";
-import { UsersProvider } from "../providers/UsersProvider";
 import Dashboard from "../components/Students/Dashboard";
-import Admin from "../components/Users/Admin";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const { loggedInUser } = useContext(AuthContext);
 
+  useEffect(() => {
+    if (!loggedInUser) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
-    <>
-      <StudentsProvider>
-        <Dashboard />
-      </StudentsProvider>
-      <UsersProvider>{loggedInUser && loggedInUser.isAdmin === true ? <Admin /> : ""}</UsersProvider>
-    </>
+    <div className="home-container">
+      <Dashboard />
+    </div>
   );
 };
 

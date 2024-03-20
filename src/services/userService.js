@@ -3,9 +3,6 @@ import { utilService } from "./utilService";
 import axios from "axios";
 
 function createUser(username, email, password, avatar) {
-  console.log(username);
-  console.log(avatar);
-
   const newUser = {
     id: utilService.generateId(),
     username,
@@ -81,5 +78,12 @@ async function fetchAvatar(username = "shoshi") {
     console.log(error);
   }
 }
-
-export const userService = { createUser, login, logout, fetchAvatar, removeUser, updateUser };
+function getEmptyUser() {
+  return {
+    avatar: "",
+    email: "",
+    username: "",
+    password: "",
+  };
+}
+export const userService = { createUser, getEmptyUser, login, logout, fetchAvatar, removeUser, updateUser };

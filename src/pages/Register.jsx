@@ -1,11 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
-  const { handleRegister, usernameRef, passwordRef, emailRef } = useContext(AuthContext);
+  const usernameRef = useRef(null);
+  const passwordRef = useRef(null);
+  const emailRef = useRef(null);
+  const { handleAuth } = useContext(AuthContext);
 
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    const username = usernameRef.current.value;
+    const password = passwordRef.current.value;
+    const email = emailRef.current.value;
+
+    if (!username.trim() || !password.trim() || !email.trim()) return;
+
+    handleAuth(username, password, true, email);
+  };
   return (
     <section className="register-container">
       <h1>Register form</h1>

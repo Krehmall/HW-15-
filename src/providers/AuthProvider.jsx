@@ -11,9 +11,6 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [showCredentsEror, setShowCredentsEror] = useState(false);
-  const usernameRef = useRef(null);
-  const passwordRef = useRef(null);
-  const emailRef = useRef(null);
 
   useEffect(() => {
     const logUserFromStorage = storageService.getLoggedInUser();
@@ -27,25 +24,6 @@ const AuthProvider = ({ children }) => {
     }
   }, [loggedInUser]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const username = usernameRef.current.value;
-    const password = passwordRef.current.value;
-
-    handleAuth(username, password);
-  };
-
-  const handleRegister = (e) => {
-    e.preventDefault();
-
-    const username = usernameRef.current.value;
-    const password = passwordRef.current.value;
-    const email = emailRef.current.value;
-
-    if (!username.trim() || !password.trim() || !email.trim()) return;
-
-    handleAuth(username, password, true, email);
-  };
   const handleAuth = (username, password, isRegister = false, email = "") => {
     if (isRegister) {
       // register
@@ -65,7 +43,6 @@ const AuthProvider = ({ children }) => {
   const handleLogout = () => {
     userService.logout();
     setLoggedInUser(null);
-    // navigate("/login");
   };
 
   const context = {
@@ -75,11 +52,6 @@ const AuthProvider = ({ children }) => {
     setLoggedInUser,
     showCredentsEror,
     setShowCredentsEror,
-    handleSubmit,
-    handleRegister,
-    usernameRef,
-    passwordRef,
-    emailRef,
   };
 
   return <AuthContext.Provider value={context}>{children}</AuthContext.Provider>;

@@ -23,3 +23,8 @@ img {
   width: 70px;
   height: 70px;
 }
+.main-container {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+}
