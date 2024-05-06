@@ -1,8 +1,25 @@
-# React + Vite
+This is my first React App i made.
+I used React+Vite with NodeJs as base.
+I did my best to keep the "React Thinking" aproach,
+which is about components dividing.
+I also used Context Provider and Browser Router,
+and some base hooks like a "UseState". 
+Browser local storage was used as DataBase.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+How to run the App:
+1.Go to console in app directory enter command: npm i 
+2.Then in console enter command: npm run dev 
+3.In your browser follow the link that will appear in console
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Description:
+You can register and then login, all new users will be saved in local storage.
+At homepage you can see all students they are availbe to be edited or removed, also you can add new one.
+You can make admin user which can manage all users of this app just like students.
+In order to create admin user just write "admin" in username input when you registering.
+
+
+
+
+
+
