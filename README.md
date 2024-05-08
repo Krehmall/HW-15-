@@ -1,5 +1,5 @@
 This is my first React App i made.
-I used React+Vite with NodeJs as base.
+I used: React+Vite ,HTML+CSS.
 I did my best to keep the "React Thinking" aproach,
 which is about components dividing.
 I also used Context Provider and Browser Router,
