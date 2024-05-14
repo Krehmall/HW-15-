@@ -21,7 +21,7 @@ To run this App [NodeJs](https://nodejs.org/en/download/current) is required to 
 You can register and then login, all new users will be saved in local storage.
 At homepage you can see all students they are availbe to be edited or removed, also you can add new one.
 You can make admin user which can manage all users of this app just like students.
-In order to create admin user just write "admin" in username input when you registering.
+In order to create admin user just write "*admin*" in username input when you registering.
 
 
 
